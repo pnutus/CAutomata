@@ -20,15 +20,16 @@ typedef uint32_t bool32;
 
 void print_state(u64 state)
 {
+    char string[65] = {};
     for (int digit_index = 63;
          digit_index >= 0;
          digit_index--)
     {
         bool32 active = ((state >> digit_index) & 1);
         char character = active * '#' + (1 - active) * ' ';
-        putchar(character);
+        string[digit_index] = character;
     }
-    putchar('\n');
+    printf("%s\n", string);
 }
 
 void ca(u8 rule, u64 initial_state)
@@ -45,14 +46,13 @@ void ca(u8 rule, u64 initial_state)
              cell_index < 62;
              cell_index++)
         {
-            // TODO(Pontus): Can this be made more efficient?
             u8 three_state = (parent_state >> cell_index) & three_mask;
-            u64 active = (((1 << three_state) & rule) != 0);
+            u64 active = ((rule >> three_state) & 1);
             state |= (active << (cell_index + 1));
         }
         
-        u64 r = ( ((random() & 1) << 63) | (random() & 1) );
-        parent_state = state | r;
+        u64 edges = ( ((random() & 1) << 63) | (random() & 1) );
+        parent_state = state | edges;
     }
     return;
 }
@@ -60,6 +60,7 @@ void ca(u8 rule, u64 initial_state)
 int main(int argc, const char * argv[]) {
     if (argc > 1)
     {
+        srandomdev();
         u64 initial_state;
         u8 rule = atoi(argv[1]);
         if (argc > 2)
@@ -69,7 +70,6 @@ int main(int argc, const char * argv[]) {
         }
         else
         {
-            srandomdev();
             initial_state = (random() << 32) | random();
         }
         printf("R%d\n", rule);
