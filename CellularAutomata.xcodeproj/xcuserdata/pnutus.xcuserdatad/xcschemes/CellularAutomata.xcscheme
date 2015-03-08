@@ -60,7 +60,19 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "22"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "204 &quot; ## #&quot;"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "110"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "204 &quot;### ### # # #  #  ######     #### ##### ##    ## #  #   ### ## #    #  #   ##&quot;"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

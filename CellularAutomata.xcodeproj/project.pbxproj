@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		120736771A8EB72100EB5548 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 120736761A8EB72100EB5548 /* main.cpp */; };
+		12DBE6B91AAD02E100A99BEC /* pcg_basic.c in Sources */ = {isa = PBXBuildFile; fileRef = 12DBE6B71AAD02E100A99BEC /* pcg_basic.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		120736731A8EB72100EB5548 /* CellularAutomata */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CellularAutomata; sourceTree = BUILT_PRODUCTS_DIR; };
 		120736761A8EB72100EB5548 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		12DBE6B71AAD02E100A99BEC /* pcg_basic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pcg_basic.c; sourceTree = "<group>"; };
+		12DBE6B81AAD02E100A99BEC /* pcg_basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcg_basic.h; sourceTree = "<group>"; };
+		12DBE6BA1AAD09AD00A99BEC /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,20 @@
 		120736751A8EB72100EB5548 /* CellularAutomata */ = {
 			isa = PBXGroup;
 			children = (
+				12DBE6BB1AAD09BE00A99BEC /* pcg */,
 				120736761A8EB72100EB5548 /* main.cpp */,
 			);
 			path = CellularAutomata;
+			sourceTree = "<group>";
+		};
+		12DBE6BB1AAD09BE00A99BEC /* pcg */ = {
+			isa = PBXGroup;
+			children = (
+				12DBE6B71AAD02E100A99BEC /* pcg_basic.c */,
+				12DBE6B81AAD02E100A99BEC /* pcg_basic.h */,
+				12DBE6BA1AAD09AD00A99BEC /* LICENSE.txt */,
+			);
+			name = pcg;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				120736771A8EB72100EB5548 /* main.cpp in Sources */,
+				12DBE6B91AAD02E100A99BEC /* pcg_basic.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +248,7 @@
 				1207367C1A8EB72100EB5548 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
