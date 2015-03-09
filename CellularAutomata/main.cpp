@@ -131,8 +131,8 @@ int main(int argc, const char * argv[]) {
         }
         else
         {
-            state = init_state(32);
-            state.bits[0] = pcg32_random();
+            state = init_state(64);
+            state.bits[0] = (((u64) pcg32_random()) << 32) | pcg32_random();
         }
         
         ca_state new_state = init_state(state.bit_count);
@@ -142,9 +142,9 @@ int main(int argc, const char * argv[]) {
             print_state(state);
             evolve_ca(state, rule, new_state);
             
-            ca_state tmp = state;
+            ca_state temp = state;
             state = new_state;
-            new_state = tmp;
+            new_state = temp;
         }
     }
     else
